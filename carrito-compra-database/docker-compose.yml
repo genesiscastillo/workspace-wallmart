@@ -1,0 +1,11 @@
+version: "3"
+services:
+    database:
+        container_name: mongodb
+        build: .
+        environment:
+         - MONGO_INITDB_ROOT_USERNAME=${MY_MONGODB_USERNAME}
+         - MONGO_INITDB_ROOT_PASSWORD=${MY_MONGODB_PASSWORD}
+         - MONGO_INITDB_DATABASE=${MY_MONGODB_DATABASE}
+        ports:
+            - "27017:27017"

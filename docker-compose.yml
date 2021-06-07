@@ -1,0 +1,21 @@
+version: "3"
+services:
+    web:
+        container_name: carrito-compra-frontend
+        build: ./carrito-compra-frontend
+        ports:
+            - "4200:80"
+        links:
+            - rest
+    rest:
+        container_name: carrito-compra-backend
+        build: ./carrito-compra-backend
+        ports:
+            - "8080:8080"
+        links:
+            - database
+    database:
+        container_name: mongodb
+        build: ./carrito-compra-database
+        ports:
+            - "27017:27017"

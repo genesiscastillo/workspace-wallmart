@@ -1,0 +1,8 @@
+cl\wallmart\lider\controller\ProductoController.class
+cl\wallmart\lider\App.class
+cl\wallmart\lider\entities\Descuento.class
+cl\wallmart\lider\WebConfig.class
+cl\wallmart\lider\entities\Producto.class
+cl\wallmart\lider\repositories\ProductoRepository.class
+cl\wallmart\lider\repositories\DescuentoRepository.class
+cl\wallmart\lider\controller\DescuentoController.class
