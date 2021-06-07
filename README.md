@@ -12,7 +12,14 @@
 ./docker-compose up
 ```
 
+* application online
+
+[application online - here](http://localhost:4200/home)
+
+--
+
 ![carrito](/img/home1prod.png)
+
 ![carrito](/img/carrito1prod.png)
 
 
