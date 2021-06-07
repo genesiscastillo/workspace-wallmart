@@ -1,0 +1,58 @@
+<h1>Mi Carrito de Compra</h1>>
+<div *ngIf="carritoCompra.productoSeleccionado.length > 0">
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col">.</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto1 of carritoCompra.productoSeleccionado">
+                <td style="width: 70px;;"><img [src]="'//' + producto1.image" width="60" height="60" /></td>
+                <td><b>{{ producto1.brand}}</b><br/>{{ producto1.description }}</td>
+                <td>{{ producto1.price | currency:'USD':'symbol':'.0-0'}}</td>
+                <td style="text-align: center;">{{ producto1.amount}}</td>
+                <td>{{ producto1.total | currency:'USD':'symbol':'.0-0'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <ul class="list-group" *ngFor="let mensaje1 of carritoCompra.mensajeAgregarMarca">
+        <li class="list-group-item list-group-item-primary"><b>* {{mensaje1}}</b></li>
+    </ul>
+    <br/>
+    <table class="table table-info tablepress-id-N">
+        <tbody>
+            <tr>
+                <th style="width: 70%">
+                    <p>SubTotal de Productos</p>
+                </th>
+                <td style="width: 70%">{{ carritoCompra.subTotal | currency:'USD':'symbol':'.0-0'}}</td>
+            </tr>
+            <tr>
+                <th>
+                    <p>Descuentos por marca</p>
+                    <br/>
+                    <p style="font-size: smaller;color: blue;" *ngFor="let mensaje2 of carritoCompra.mensajeDescuentoAplicado"><b>{{ mensaje2 }}</b></p>
+                </th>
+                <td>- {{ carritoCompra.descuentoPorMarca | currency:'USD':'symbol':'.0-0' }}</td>
+            </tr>
+            <tr>
+                <th>
+                    <p class="text-right">Total a Pagar</p>
+                </th>
+                <td>{{ carritoCompra.totalPagar | currency:'USD':'symbol':'.0-0' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="carritoCompra.productoSeleccionado.length === 0">
+    <div class="alert alert-secondary" role="alert">
+        No tienes productos seleccionados
+    </div>
+</div>
+<button type="button" class="btn btn-primary btn-lg" (click)="irAproductos()">Seguir Comprando</button>

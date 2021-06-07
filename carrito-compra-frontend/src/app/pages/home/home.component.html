@@ -1,0 +1,31 @@
+<h1 class="mt-5">Productos</h1>
+
+<div class="row">
+    <div class="col-md-3 mb-5" *ngFor="let producto of productos">
+        <img [src]="'//' + producto.image" class="img-fluid poster">
+        <div>
+            <h3><b>{{ producto.brand}}</b> {{ producto.description}}</h3>
+            <div class="row">
+                <div class="col text-white" style="text-align: right;">
+                    <h5>{{ producto.price | currency:'USD':'symbol':'.0-0'}}</h5>
+                </div>
+            </div>
+            <div class="row" style="text-align: center;">
+                <div class="col" *ngIf="producto.amount === 0">
+                    <button (click)="agregarProducto( producto )" type="button" class="btn btn-outline-secondary">Agregar</button>
+                </div>
+                <div class="row" *ngIf="producto.amount !== 0">
+                    <div class="col-5" style="text-align: right;">
+                        <button (click)="quitarProducto( producto )" type="button" class="btn btn-outline-secondary">-</button>
+                    </div>
+                    <div class="col-1">
+                        <p>{{producto.amount}}</p>
+                    </div>
+                    <div class="col-5">
+                        <button (click)="agregarProducto( producto )" type="button" class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

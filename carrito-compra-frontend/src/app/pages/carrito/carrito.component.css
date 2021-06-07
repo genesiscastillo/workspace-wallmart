@@ -1,0 +1,14 @@
+.tablepress-id-N tbody td {
+    font-family: Tahoma;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.tablepress-id-N tbody th p {
+    text-align: right;
+    font-family: Tahoma;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+}
